@@ -94,6 +94,7 @@ export const sessions: Session[] = [
     slug: "build-frontend-with-ai",
     number: 2,
     category: "Frontend",
+    video: "https://drive.google.com/file/d/1RMRe3JAmbZxo9jbeTCd2-miw_F_sWd-3/view?usp=sharing",
     shortTitle: "Build Frontend with AI",
     title: "Build Frontend with AI",
     description: "Membuat frontend dari prompt dan referensi mockup menggunakan AI.",
