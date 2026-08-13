@@ -26,6 +26,10 @@ export type Session = {
   shortTitle: string;
   title: string;
   description: string;
+  /** Google Drive share link or file ID for the session's intro video. */
+  video?: string;
+  /** Shared ChatGPT conversation link for this session. */
+  chatgptSessionUrl?: string;
   steps: Step[];
   practice?: string;
   tools?: Tool[];
@@ -46,6 +50,8 @@ export const sessions: Session[] = [
     slug: "idea-to-flow-mockup",
     number: 1,
     category: "Frontend",
+    video: "https://drive.google.com/file/d/1-XkFKzLdbMZfIEJ4MyBo5Kk7j3aR-4ku/view?usp=sharing",
+    chatgptSessionUrl: "https://chatgpt.com/share/6a7dd68a-54f4-83ec-9b68-8c3771875003",
     shortTitle: "Idea to Flow & Mockup",
     title: "From Idea to Flow & Mockup",
     description: "Mengubah kebutuhan bisnis menjadi alur dan tampilan aplikasi.",

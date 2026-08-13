@@ -4,6 +4,8 @@ import ToolsLinks from "./ToolsLinks";
 import Resources from "./Resources";
 import InfoBlock from "./InfoBlock";
 import ImagePreview from "./ImagePreview";
+import VideoEmbed from "./VideoEmbed";
+import ChatGptSessionLink from "./ChatGptSessionLink";
 
 export default function SessionContent({ session }: { session: Session }) {
   return (
@@ -18,6 +20,8 @@ export default function SessionContent({ session }: { session: Session }) {
       </div>
       <h2 className="mt-3 text-2xl sm:text-3xl font-bold text-foreground">{session.title}</h2>
       <p className="mt-2 text-muted text-sm sm:text-base">{session.description}</p>
+
+      {session.video && <VideoEmbed source={session.video} />}
 
       <div className="mt-6 text-xs font-semibold tracking-wider text-neon-bright">
         LANGKAH-LANGKAH
@@ -55,6 +59,7 @@ export default function SessionContent({ session }: { session: Session }) {
           {session.teacherNote}
         </InfoBlock>
       )}
+      {session.chatgptSessionUrl && <ChatGptSessionLink url={session.chatgptSessionUrl} />}
     </div>
   );
 }
