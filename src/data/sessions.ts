@@ -5,6 +5,8 @@ export type Step = {
   prompt?: string;
   prompts?: { label: string; text: string }[];
   exampleResult?: string;
+  exampleResultLabel?: string;
+  exampleResultSubtitle?: string;
 };
 
 export type Tool = {
@@ -1063,6 +1065,2399 @@ Hasil akhir harus terlihat seperti aplikasi produksi yang siap dikembangkan lebi
         title: "Lanjut Buat Prompt ke ChatGPT untuk membuat Dokumentasi Aplikasi",
         prompt:
           "Oks, Sekarang buatkan Dokumentasi Aplikasis, akan aku gunakan sebagai Dasar dan Panduan Pengerjaan, sehingga AI Agent di AntiGravity akan mengikuti Dokumentasi ini dari Awal Pengerjaan hingga Selesai Aplikasi",
+        exampleResultLabel: "CONTOH DOKUMENTASI DARI CHATGPT",
+        exampleResultSubtitle: "Dipakai sebagai dasar dan panduan pembuatan Aplikasi",
+        exampleResult: `# MASTER DOCUMENTATION
+
+## APLIKASI REGISTRASI PESERTA
+
+**Versi:** 1.0
+**Status:** Dokumen Dasar Pengerjaan
+**Target:** AI Agent AntiGravity
+**Bahasa Aplikasi:** Bahasa Indonesia
+**Platform:** Web Responsive
+**Pengguna:** Peserta dan Admin
+
+---
+
+# 1. TUJUAN DOKUMENTASI
+
+Dokumen ini adalah **sumber acuan utama** dalam proses pengembangan Aplikasi Registrasi Peserta.
+
+AI Agent wajib menggunakan dokumen ini sebagai dasar dalam:
+
+* Menganalisis kebutuhan.
+* Membuat struktur aplikasi.
+* Membuat database.
+* Membuat frontend.
+* Membuat backend.
+* Membuat API.
+* Membuat validasi.
+* Membuat autentikasi.
+* Membuat halaman Peserta.
+* Membuat halaman Admin.
+* Membuat responsive design.
+* Melakukan testing.
+* Memperbaiki error.
+* Menyiapkan aplikasi untuk deployment.
+
+## ATURAN UTAMA
+
+AI Agent **tidak boleh menambahkan fitur baru hanya karena fitur tersebut dianggap menarik atau umum digunakan**.
+
+Jika sebuah fitur tidak terdapat dalam dokumentasi ini:
+
+1. Jangan langsung membuatnya.
+2. Periksa apakah fitur tersebut memang dibutuhkan oleh alur aplikasi.
+3. Jika tidak diperlukan, jangan dibuat.
+4. Jika fitur tersebut sangat diperlukan untuk membuat sistem berjalan dengan benar, dokumentasikan terlebih dahulu sebagai "fitur pendukung sistem".
+
+Prinsip utama:
+
+> **Sederhana, jelas, mudah digunakan, dan fokus pada kebutuhan registrasi.**
+
+---
+
+# 2. GAMBARAN UMUM APLIKASI
+
+Aplikasi ini digunakan untuk mengelola proses pendaftaran peserta secara online.
+
+Alur utama:
+
+\`\`\`text
+ADMIN
+  ↓
+Membuat Registrasi
+  ↓
+Mendapatkan Link Registrasi
+  ↓
+Membagikan Link
+  ↓
+PESERTA
+  ↓
+Membuka Link
+  ↓
+Mengisi Data Diri
+  ↓
+Melakukan Pembayaran
+  ↓
+Upload Bukti Pembayaran
+  ↓
+Menunggu Verifikasi
+  ↓
+ADMIN
+  ↓
+Memeriksa Pembayaran
+  ↓
+Menyetujui
+  ↓
+PESERTA
+  ↓
+Mendapatkan Kartu Pendaftaran
+\`\`\`
+
+---
+
+# 3. TUJUAN APLIKASI
+
+Aplikasi harus menyelesaikan kebutuhan berikut:
+
+### Untuk Peserta
+
+Peserta dapat:
+
+* Membuka link pendaftaran.
+* Melihat informasi acara.
+* Mengisi data diri.
+* Melihat informasi pembayaran.
+* Melakukan pembayaran.
+* Upload bukti pembayaran.
+* Melihat status pendaftaran.
+* Mendapatkan kartu pendaftaran setelah disetujui.
+
+### Untuk Admin
+
+Admin dapat:
+
+* Login.
+* Membuat pendaftaran.
+* Mengatur informasi acara.
+* Mendapatkan link registrasi.
+* Melihat daftar peserta.
+* Melihat detail peserta.
+* Melihat bukti pembayaran.
+* Menyetujui pembayaran.
+* Menolak pembayaran.
+* Meminta peserta upload ulang bukti.
+* Melihat kartu pendaftaran.
+
+---
+
+# 4. PENGGUNA APLIKASI
+
+Aplikasi hanya memiliki 2 role utama.
+
+## ROLE 1 — PESERTA
+
+Peserta adalah orang yang mengikuti acara atau kegiatan.
+
+Peserta **tidak perlu membuat akun/password**.
+
+Peserta cukup menggunakan link registrasi.
+
+---
+
+## ROLE 2 — ADMIN
+
+Admin adalah pengguna yang mengelola pendaftaran.
+
+Admin harus login untuk mengakses halaman pengelolaan.
+
+---
+
+# 5. PRINSIP UX/UI
+
+Ini adalah aturan penting dan harus diterapkan pada seluruh aplikasi.
+
+## 5.1 Sederhana
+
+Jangan membuat aplikasi terlalu banyak informasi.
+
+Setiap halaman harus memiliki satu tujuan utama.
+
+Contoh:
+
+Halaman Data Diri hanya fokus pada pengisian data diri.
+
+Jangan mencampurkan:
+
+* Data diri
+* Pembayaran
+* Informasi admin
+* Statistik
+* Pengaturan
+
+dalam satu halaman.
+
+---
+
+# 5.2 Bahasa Indonesia
+
+Gunakan Bahasa Indonesia yang sederhana.
+
+Gunakan:
+
+* Daftar Sekarang
+* Data Diri
+* Pembayaran
+* Upload Bukti Pembayaran
+* Kirim Pendaftaran
+* Menunggu Verifikasi
+* Sudah Disetujui
+* Ditolak
+* Lihat Kartu
+* Kembali
+* Lanjutkan
+* Simpan
+* Salin Link
+
+Hindari istilah teknis pada UI.
+
+Jangan menggunakan:
+
+* Submit
+* Transaction
+* Payment Verification Queue
+* User Submission
+* Processing
+* Invalid Transaction
+
+kecuali istilah tersebut memang hanya digunakan pada kode internal.
+
+---
+
+# 5.3 Clean
+
+Gunakan:
+
+* Background putih / abu-abu sangat muda.
+* Card putih.
+* Border tipis.
+* Shadow ringan.
+* Radius sedang.
+* Typography sederhana.
+* Icon sederhana.
+* Sedikit warna.
+
+Hindari:
+
+* Gradient berlebihan.
+* Animasi berlebihan.
+* Terlalu banyak warna.
+* Terlalu banyak card.
+* Dashboard penuh grafik.
+* Dekorasi yang tidak diperlukan.
+
+---
+
+# 5.4 Mobile First
+
+Mayoritas peserta kemungkinan membuka link melalui HP.
+
+Oleh karena itu:
+
+> **Mobile adalah prioritas utama.**
+
+Desktop harus mengikuti sistem desain yang sama.
+
+---
+
+# 5.5 Responsive
+
+Aplikasi wajib berjalan dengan baik pada:
+
+* Mobile 360px
+* Mobile 375px
+* Mobile 390px
+* Mobile 414px
+* Tablet 768px
+* Laptop 1024px
+* Desktop 1280px+
+* Desktop besar 1440px+
+
+Tidak boleh terdapat horizontal scrolling.
+
+---
+
+# 6. ALUR PESERTA
+
+## STEP 1 — Informasi Pendaftaran
+
+Peserta membuka:
+
+\`\`\`text
+/daftar/[slug]
+\`\`\`
+
+Contoh:
+
+\`\`\`text
+/daftar/seminar-digital-marketing
+\`\`\`
+
+Peserta melihat:
+
+* Nama acara.
+* Deskripsi singkat.
+* Tanggal.
+* Jam.
+* Tempat.
+* Biaya.
+* Fasilitas.
+
+Tombol:
+
+**Daftar Sekarang**
+
+---
+
+## STEP 2 — Data Diri
+
+Peserta mengisi:
+
+* Nama Lengkap
+* Nomor WhatsApp
+* Email
+* Instansi / Asal
+* Kategori
+
+Field wajib:
+
+* Nama Lengkap
+* Nomor WhatsApp
+* Kategori
+
+Email boleh dibuat wajib jika sistem memang membutuhkan email.
+
+Tombol:
+
+**Kembali**
+
+**Lanjutkan**
+
+---
+
+# 7. STEP 3 — PEMBAYARAN
+
+Tampilkan:
+
+### Total Pembayaran
+
+Contoh:
+
+**Rp150.000**
+
+Kemudian metode pembayaran.
+
+Minimal dukung:
+
+* Transfer Bank
+* QRIS
+
+Untuk Transfer Bank:
+
+\`\`\`text
+Bank BCA
+
+1234 5678 90
+
+a.n. PT Seven Class Indonesia
+\`\`\`
+
+Sediakan:
+
+**Salin Nomor Rekening**
+
+Tombol:
+
+**Saya Sudah Bayar**
+
+---
+
+# 8. STEP 4 — UPLOAD BUKTI PEMBAYARAN
+
+Peserta upload:
+
+* JPG
+* JPEG
+* PNG
+* PDF
+
+Maksimal:
+
+**5 MB**
+
+Setelah file dipilih:
+
+* Tampilkan nama file.
+* Tampilkan preview jika berupa gambar.
+* Berikan opsi mengganti file.
+
+Tombol:
+
+**Kirim Pendaftaran**
+
+---
+
+# 9. STEP 5 — STATUS PENDAFTARAN
+
+Setelah pendaftaran dikirim:
+
+\`\`\`text
+Pendaftaran Diterima
+
+Terima kasih, [Nama].
+
+Pendaftaran Anda sudah kami terima.
+
+Status:
+MENUNGGU VERIFIKASI
+\`\`\`
+
+Tampilkan:
+
+* Nomor pendaftaran.
+* Nama.
+* Tanggal daftar.
+* Status.
+
+Contoh:
+
+\`\`\`text
+Nomor Pendaftaran
+REG-000125
+
+Tanggal Daftar
+23 Mei 2026
+
+Status
+Menunggu Verifikasi
+\`\`\`
+
+---
+
+# 10. STATUS PENDAFTARAN
+
+Gunakan hanya status berikut.
+
+## MENUNGGU PEMBAYARAN
+
+Peserta belum mengupload bukti pembayaran.
+
+---
+
+## MENUNGGU VERIFIKASI
+
+Peserta sudah mengirim bukti pembayaran dan menunggu pemeriksaan admin.
+
+---
+
+## DISETUJUI
+
+Admin menyetujui pembayaran.
+
+Peserta dapat melihat kartu pendaftaran.
+
+---
+
+## DITOLAK
+
+Bukti pembayaran tidak dapat diterima.
+
+Admin dapat memberikan alasan.
+
+---
+
+## MINTA UPLOAD ULANG
+
+Jika sistem membutuhkan status khusus, gunakan:
+
+**Perlu Upload Ulang**
+
+Peserta harus mengupload bukti pembayaran kembali.
+
+---
+
+# 11. KARTU PENDAFTARAN
+
+Kartu hanya dapat tersedia jika pembayaran telah disetujui.
+
+Isi kartu:
+
+\`\`\`text
+KARTU PENDAFTARAN
+
+[NAMA ACARA]
+
+Nama:
+Budi Santoso
+
+No. Peserta:
+REG-000125
+
+Tanggal:
+23 Mei 2026
+
+Tempat:
+Hotel Grand Indonesia, Jakarta
+
+Status:
+TERDAFTAR
+
+[QR CODE]
+\`\`\`
+
+QR Code berisi identifier pendaftaran.
+
+Contoh:
+
+\`\`\`text
+REG-000125
+\`\`\`
+
+atau token unik yang tidak mengekspos data pribadi.
+
+Peserta dapat:
+
+* Melihat kartu.
+* Download kartu.
+* Print kartu.
+
+---
+
+# 12. ALUR ADMIN
+
+\`\`\`text
+Login
+ ↓
+Dashboard
+ ↓
+Buat Registrasi
+ ↓
+Simpan
+ ↓
+Dapat Link
+ ↓
+Bagikan Link
+ ↓
+Peserta Mendaftar
+ ↓
+Daftar Peserta
+ ↓
+Detail Peserta
+ ↓
+Periksa Pembayaran
+ ↓
+Setujui / Tolak / Minta Upload Ulang
+ ↓
+Kartu Pendaftaran
+\`\`\`
+
+---
+
+# 13. HALAMAN ADMIN
+
+Admin memiliki halaman:
+
+1. Login
+2. Dashboard
+3. Registrasi
+4. Buat Registrasi
+5. Daftar Peserta
+6. Detail Peserta
+7. Pembayaran
+8. Kartu Pendaftaran
+9. Pengaturan sederhana
+
+---
+
+# 14. LOGIN ADMIN
+
+URL:
+
+\`\`\`text
+/admin/login
+\`\`\`
+
+Form:
+
+* Email
+* Password
+
+Tombol:
+
+**Masuk**
+
+Jika salah:
+
+> Email atau password salah.
+
+Jangan memberikan informasi apakah email tersebut terdaftar atau tidak.
+
+---
+
+# 15. DASHBOARD ADMIN
+
+URL:
+
+\`\`\`text
+/admin
+\`\`\`
+
+Tampilkan 4 statistik utama:
+
+\`\`\`text
+Total Peserta
+Sudah Disetujui
+Menunggu Verifikasi
+Ditolak
+\`\`\`
+
+Contoh:
+
+\`\`\`text
+125
+100
+15
+10
+\`\`\`
+
+Kemudian:
+
+### Peserta Terbaru
+
+Kolom:
+
+* Nama
+* Tanggal Daftar
+* Status
+* Aksi
+
+Jangan membuat dashboard dengan:
+
+* Grafik kompleks.
+* Statistik tidak diperlukan.
+* Informasi terlalu banyak.
+
+---
+
+# 16. REGISTRASI ADMIN
+
+URL:
+
+\`\`\`text
+/admin/registrasi
+\`\`\`
+
+Admin dapat membuat registrasi.
+
+Informasi:
+
+### Informasi Acara
+
+* Nama acara
+* Deskripsi
+* Tanggal
+* Jam
+* Tempat
+* Kuota
+* Biaya
+
+### Informasi Pembayaran
+
+* Metode pembayaran
+* Nama bank
+* Nomor rekening
+* Nama pemilik rekening
+* QRIS jika digunakan
+
+Tombol:
+
+**Simpan & Dapatkan Link**
+
+---
+
+# 17. LINK REGISTRASI
+
+Setelah registrasi dibuat, sistem menghasilkan:
+
+\`\`\`text
+https://domain.com/daftar/[slug]
+\`\`\`
+
+Admin dapat:
+
+**Salin Link**
+
+dan:
+
+**Bagikan**
+
+Link harus dapat dibuka tanpa login.
+
+---
+
+# 18. DAFTAR PESERTA
+
+URL:
+
+\`\`\`text
+/admin/peserta
+\`\`\`
+
+Fitur:
+
+* Search nama.
+* Search WhatsApp.
+* Filter status.
+* Pagination.
+
+Kolom desktop:
+
+\`\`\`text
+No
+Nama
+WhatsApp
+Tanggal Daftar
+Status
+Aksi
+\`\`\`
+
+Aksi:
+
+**Lihat**
+
+---
+
+# 19. DETAIL PESERTA
+
+URL:
+
+\`\`\`text
+/admin/peserta/[id]
+\`\`\`
+
+Tampilkan:
+
+### Data Peserta
+
+* Nomor pendaftaran
+* Nama
+* WhatsApp
+* Email
+* Instansi
+* Kategori
+* Tanggal daftar
+* Status
+
+### Bukti Pembayaran
+
+Tampilkan file yang diupload peserta.
+
+Admin dapat:
+
+**Setujui Pembayaran**
+
+**Tolak Pembayaran**
+
+**Minta Upload Ulang**
+
+---
+
+# 20. VERIFIKASI PEMBAYARAN
+
+URL:
+
+\`\`\`text
+/admin/pembayaran
+\`\`\`
+
+Gunakan tab:
+
+\`\`\`text
+Menunggu Verifikasi
+Sudah Disetujui
+Ditolak
+\`\`\`
+
+Prioritaskan:
+
+**Menunggu Verifikasi**
+
+karena membutuhkan tindakan Admin.
+
+---
+
+# 21. ATURAN VERIFIKASI
+
+Ketika Admin klik:
+
+**Setujui Pembayaran**
+
+sistem harus:
+
+1. Meminta konfirmasi.
+2. Mengubah status pembayaran menjadi \`approved\`.
+3. Mengubah status pendaftaran menjadi \`approved\`.
+4. Membuat / mengaktifkan kartu pendaftaran.
+5. Menyimpan waktu verifikasi.
+6. Menyimpan ID Admin yang melakukan verifikasi.
+
+---
+
+# 22. PENOLAKAN PEMBAYARAN
+
+Ketika Admin memilih:
+
+**Tolak Pembayaran**
+
+tampilkan dialog:
+
+### Alasan Penolakan
+
+Admin wajib memberikan alasan.
+
+Contoh:
+
+> Bukti pembayaran tidak terlihat dengan jelas.
+
+Setelah disimpan:
+
+Status:
+
+**Ditolak**
+
+Alasan disimpan pada database.
+
+---
+
+# 23. MINTA UPLOAD ULANG
+
+Jika bukti kurang jelas:
+
+Admin dapat memilih:
+
+**Minta Upload Ulang**
+
+Berikan alasan.
+
+Contoh:
+
+> Bukti pembayaran tidak terlihat jelas. Silakan upload foto yang lebih jelas.
+
+Status peserta:
+
+**Perlu Upload Ulang**
+
+Peserta dapat kembali ke halaman upload.
+
+---
+
+# 24. DATABASE
+
+Gunakan database relational.
+
+Rekomendasi:
+
+**PostgreSQL**
+
+Jika menggunakan Supabase:
+
+**Supabase PostgreSQL + Supabase Storage + Supabase Auth**
+
+---
+
+# 25. STRUKTUR DATABASE
+
+Gunakan tabel berikut.
+
+## TABLE: admins
+
+\`\`\`text
+id
+name
+email
+password_hash / auth_id
+created_at
+updated_at
+\`\`\`
+
+---
+
+## TABLE: registrations
+
+Menyimpan informasi event/pendaftaran.
+
+\`\`\`text
+id
+name
+slug
+description
+event_date
+start_time
+end_time
+location
+quota
+registration_fee
+status
+created_at
+updated_at
+\`\`\`
+
+Status:
+
+\`\`\`text
+draft
+published
+closed
+\`\`\`
+
+---
+
+# 26. TABLE: payment_methods
+
+\`\`\`text
+id
+registration_id
+type
+bank_name
+account_number
+account_holder
+qris_image
+created_at
+updated_at
+\`\`\`
+
+Type:
+
+\`\`\`text
+bank_transfer
+qris
+\`\`\`
+
+---
+
+# 27. TABLE: participants
+
+\`\`\`text
+id
+registration_id
+registration_number
+full_name
+whatsapp
+email
+institution
+category
+status
+created_at
+updated_at
+\`\`\`
+
+Status:
+
+\`\`\`text
+waiting_payment
+waiting_verification
+approved
+rejected
+resubmit
+\`\`\`
+
+\`registration_number\` harus unik.
+
+Contoh:
+
+\`\`\`text
+REG-000001
+REG-000002
+REG-000003
+\`\`\`
+
+---
+
+# 28. TABLE: payment_proofs
+
+\`\`\`text
+id
+participant_id
+file_url
+file_name
+file_type
+file_size
+status
+rejection_reason
+uploaded_at
+verified_at
+verified_by
+created_at
+updated_at
+\`\`\`
+
+Status:
+
+\`\`\`text
+pending
+approved
+rejected
+resubmit
+\`\`\`
+
+---
+
+# 29. TABLE: registration_cards
+
+\`\`\`text
+id
+participant_id
+card_number
+qr_token
+created_at
+updated_at
+\`\`\`
+
+Kartu hanya dibuat/diaktifkan ketika peserta sudah disetujui.
+
+---
+
+# 30. TABLE: audit_logs
+
+Untuk mencatat tindakan Admin.
+
+\`\`\`text
+id
+admin_id
+action
+entity_type
+entity_id
+description
+created_at
+\`\`\`
+
+Contoh:
+
+\`\`\`text
+Admin menyetujui pembayaran peserta REG-000125.
+\`\`\`
+
+Audit log tidak perlu ditampilkan pada UI versi pertama, tetapi tetap baik disimpan untuk keamanan dan pelacakan.
+
+---
+
+# 31. RELASI DATABASE
+
+\`\`\`text
+admins
+   │
+   │
+   └──── audit_logs
+
+
+registrations
+   │
+   ├──── payment_methods
+   │
+   └──── participants
+              │
+              ├──── payment_proofs
+              │
+              └──── registration_cards
+\`\`\`
+
+---
+
+# 32. ATURAN DATA
+
+## Nomor WhatsApp
+
+Simpan dalam format yang konsisten.
+
+Contoh:
+
+\`\`\`text
+081234567890
+\`\`\`
+
+atau format internasional:
+
+\`\`\`text
+6281234567890
+\`\`\`
+
+Pilih satu format dan gunakan secara konsisten.
+
+---
+
+## Email
+
+Jika diisi harus divalidasi.
+
+---
+
+## Biaya
+
+Jangan menyimpan:
+
+\`\`\`text
+"Rp150.000"
+\`\`\`
+
+sebagai string.
+
+Simpan nilai numerik:
+
+\`\`\`text
+150000
+\`\`\`
+
+Kemudian format menjadi:
+
+\`\`\`text
+Rp150.000
+\`\`\`
+
+di UI.
+
+---
+
+# 33. KEAMANAN
+
+Security adalah tanggung jawab sistem.
+
+Minimal:
+
+* Password Admin harus di-hash.
+* Jangan menyimpan password dalam bentuk plain text.
+* Endpoint Admin harus dilindungi authentication.
+* Peserta tidak boleh mengakses data peserta lain.
+* Peserta hanya boleh melihat data miliknya sendiri.
+* Validasi file upload.
+* Batasi ukuran file.
+* Validasi MIME type.
+* Jangan percaya nama file dari pengguna.
+* Gunakan random filename.
+* Jangan expose credential database ke frontend.
+* Secret/API key hanya berada di server environment.
+* Jangan expose data pribadi melalui URL.
+* Gunakan HTTPS pada production.
+
+---
+
+# 34. FILE UPLOAD
+
+Bukti pembayaran hanya boleh menerima:
+
+\`\`\`text
+image/jpeg
+image/png
+application/pdf
+\`\`\`
+
+Ukuran maksimal:
+
+\`\`\`text
+5 MB
+\`\`\`
+
+Jika file tidak sesuai:
+
+> File tidak dapat diupload. Gunakan JPG, PNG, atau PDF dengan ukuran maksimal 5 MB.
+
+---
+
+# 35. VALIDASI FORM
+
+Semua validasi harus dilakukan:
+
+1. Di frontend.
+2. Di backend/server.
+
+Frontend hanya untuk kenyamanan pengguna.
+
+Backend adalah validasi utama.
+
+---
+
+# 36. ERROR HANDLING
+
+Error harus mudah dipahami.
+
+Contoh:
+
+Jangan:
+
+\`\`\`text
+500 Internal Server Error
+\`\`\`
+
+pada UI.
+
+Gunakan:
+
+> Terjadi masalah. Silakan coba lagi.
+
+Jika server error:
+
+* Simpan detail error di server log.
+* Jangan tampilkan detail teknis kepada pengguna.
+
+---
+
+# 37. LOADING STATE
+
+Setiap tombol yang menjalankan proses harus memiliki loading state.
+
+Contoh:
+
+Normal:
+
+**Kirim Pendaftaran**
+
+Saat proses:
+
+**Mengirim...**
+
+Setelah selesai:
+
+**Pendaftaran berhasil dikirim.**
+
+---
+
+# 38. EMPTY STATE
+
+Jika belum ada peserta:
+
+\`\`\`text
+Belum ada peserta
+
+Peserta yang mendaftar akan muncul di sini.
+\`\`\`
+
+Jika belum ada pembayaran:
+
+\`\`\`text
+Belum ada pembayaran yang perlu diperiksa.
+\`\`\`
+
+---
+
+# 39. NOTIFICATION
+
+Gunakan toast/notification sederhana.
+
+Contoh:
+
+**Berhasil**
+
+> Data berhasil disimpan.
+
+**Berhasil**
+
+> Link registrasi berhasil disalin.
+
+**Berhasil**
+
+> Pembayaran berhasil disetujui.
+
+**Error**
+
+> Data belum lengkap.
+
+---
+
+# 40. STRUKTUR ROUTE
+
+Gunakan struktur yang jelas.
+
+\`\`\`text
+/
+├── admin/
+│   ├── login
+│   ├── dashboard
+│   ├── registrasi
+│   ├── registrasi/buat
+│   ├── peserta
+│   ├── peserta/[id]
+│   ├── pembayaran
+│   ├── kartu
+│   └── pengaturan
+│
+└── daftar/
+    └── [slug]/
+        ├── data-diri
+        ├── pembayaran
+        ├── upload-bukti
+        ├── status
+        └── kartu
+\`\`\`
+
+Jika menggunakan Next.js App Router, sesuaikan dengan struktur folder App Router.
+
+---
+
+# 41. STRUKTUR KOMPONEN
+
+Gunakan reusable component.
+
+Minimal:
+
+\`\`\`text
+components/
+├── ui/
+├── admin/
+│   ├── AdminSidebar
+│   ├── AdminHeader
+│   ├── SummaryCard
+│   ├── ParticipantTable
+│   ├── ParticipantCard
+│   └── PaymentProof
+│
+└── registration/
+    ├── RegistrationHeader
+    ├── ProgressSteps
+    ├── EventInfo
+    ├── ParticipantForm
+    ├── PaymentInfo
+    ├── FileUpload
+    ├── RegistrationStatus
+    └── RegistrationCard
+\`\`\`
+
+Jangan membuat component yang sangat besar.
+
+---
+
+# 42. DESAIN DESKTOP ADMIN
+
+Desktop menggunakan:
+
+\`\`\`text
+┌──────────────┬──────────────────────────────┐
+│              │                              │
+│   SIDEBAR    │          CONTENT             │
+│              │                              │
+│ Dashboard    │                              │
+│ Registrasi   │                              │
+│ Peserta      │                              │
+│ Pembayaran   │                              │
+│ Kartu        │                              │
+│ Pengaturan   │                              │
+│              │                              │
+└──────────────┴──────────────────────────────┘
+\`\`\`
+
+Sidebar tetap sederhana.
+
+---
+
+# 43. DESAIN MOBILE ADMIN
+
+Sidebar berubah menjadi drawer.
+
+\`\`\`text
+┌─────────────────────────┐
+│ ☰   Dashboard      👤   │
+├─────────────────────────┤
+│                         │
+│       CONTENT           │
+│                         │
+│                         │
+└─────────────────────────┘
+\`\`\`
+
+Table harus berubah menjadi card/list.
+
+---
+
+# 44. DESAIN PESERTA
+
+Peserta tidak menggunakan sidebar.
+
+Gunakan:
+
+\`\`\`text
+┌─────────────────────────┐
+│ Logo       Bantuan      │
+├─────────────────────────┤
+│                         │
+│ Progress                │
+│ 1 — 2 — 3 — 4 — 5      │
+│                         │
+│ Content                 │
+│                         │
+│                         │
+│ [ Tombol Utama ]        │
+└─────────────────────────┘
+\`\`\`
+
+---
+
+# 45. AKSES DATA PESERTA
+
+Karena peserta tidak login, sistem harus mempunyai mekanisme aman untuk mengakses status pendaftaran.
+
+Jangan menggunakan:
+
+\`\`\`text
+?id=1
+\`\`\`
+
+sebagai satu-satunya mekanisme keamanan.
+
+Gunakan token/identifier yang sulit ditebak.
+
+Contoh:
+
+\`\`\`text
+/status/[secure-token]
+\`\`\`
+
+atau gunakan link khusus setelah pendaftaran.
+
+Token harus random dan tidak mengandung informasi pribadi.
+
+---
+
+# 46. DUPLIKASI PENDAFTARAN
+
+Sistem sebaiknya mencegah pendaftaran yang tidak sengaja dilakukan berkali-kali.
+
+Gunakan kombinasi:
+
+\`\`\`text
+registration_id + whatsapp
+\`\`\`
+
+untuk mendeteksi kemungkinan pendaftaran ganda.
+
+Jika ditemukan:
+
+> Nomor WhatsApp ini sudah terdaftar pada pendaftaran ini.
+
+Jangan otomatis menghapus data lama.
+
+---
+
+# 47. KUOTA PESERTA
+
+Jika kuota sudah penuh:
+
+Status registrasi menjadi:
+
+**Pendaftaran Ditutup**
+
+Peserta melihat:
+
+> Pendaftaran untuk acara ini sudah penuh.
+
+Tombol daftar tidak ditampilkan.
+
+---
+
+# 48. STATUS REGISTRASI
+
+Event memiliki status:
+
+### Draft
+
+Belum dapat diakses publik.
+
+### Published
+
+Link dapat digunakan peserta.
+
+### Closed
+
+Pendaftaran ditutup.
+
+---
+
+# 49. PENGATURAN ADMIN
+
+Pengaturan versi awal harus sederhana.
+
+Minimal:
+
+* Nama Admin
+* Email Admin
+* Ganti Password
+
+Jangan membuat halaman pengaturan terlalu kompleks.
+
+---
+
+# 50. RESPONSIVE RULE
+
+AI Agent wajib melakukan pengecekan pada minimal:
+
+\`\`\`text
+360px
+390px
+430px
+768px
+1024px
+1280px
+1440px
+\`\`\`
+
+Periksa:
+
+* Tidak ada horizontal scroll.
+* Tombol tidak terpotong.
+* Form tidak keluar layar.
+* Text tidak bertabrakan.
+* Table tidak merusak layout.
+* Modal tidak keluar layar.
+* Sidebar tidak menutupi content.
+* File upload tetap mudah digunakan.
+* Kartu pendaftaran tetap terlihat baik.
+
+---
+
+# 51. ACCESSIBILITY
+
+Minimal:
+
+* Gunakan label untuk input.
+* Gunakan kontras warna yang baik.
+* Button memiliki text yang jelas.
+* Jangan hanya mengandalkan warna untuk status.
+* Input memiliki focus state.
+* Keyboard navigation harus tetap dapat digunakan.
+* Error message harus dekat dengan field yang bermasalah.
+
+---
+
+# 52. SEO DASAR
+
+Halaman publik registrasi harus memiliki:
+
+* Title.
+* Description.
+* Open Graph metadata.
+
+Contoh title:
+
+\`\`\`text
+Registrasi Seminar Digital Marketing
+\`\`\`
+
+Admin tidak perlu dioptimalkan untuk SEO.
+
+---
+
+# 53. PERFORMANCE
+
+Prioritaskan:
+
+* Loading cepat.
+* Gambar dioptimalkan.
+* Jangan memuat library yang tidak diperlukan.
+* Jangan menggunakan animasi berat.
+* Jangan membuat bundle terlalu besar.
+* Gunakan lazy loading jika memang diperlukan.
+
+---
+
+# 54. IMPLEMENTATION PLAN
+
+AI Agent harus mengerjakan aplikasi secara bertahap.
+
+Jangan langsung membuat seluruh aplikasi sekaligus.
+
+---
+
+## PHASE 1 — ANALISIS
+
+Sebelum coding:
+
+1. Baca dokumentasi ini.
+2. Identifikasi role.
+3. Identifikasi alur.
+4. Identifikasi halaman.
+5. Identifikasi database.
+6. Identifikasi hubungan antar data.
+7. Identifikasi security requirement.
+
+Output:
+
+\`\`\`text
+Project Understanding
+Page Map
+Data Model
+User Flow
+Technical Plan
+\`\`\`
+
+Jangan coding sebelum struktur dipahami.
+
+---
+
+# 55. PHASE 2 — PROJECT SETUP
+
+Siapkan:
+
+* Next.js
+* TypeScript
+* Tailwind
+* shadcn/ui
+* ESLint
+* Database
+* Environment configuration
+
+Pastikan project dapat dijalankan sebelum melanjutkan.
+
+---
+
+# 56. PHASE 3 — DESIGN SYSTEM
+
+Buat terlebih dahulu:
+
+* Typography.
+* Color.
+* Spacing.
+* Button.
+* Input.
+* Select.
+* Card.
+* Badge.
+* Modal.
+* Toast.
+* Table.
+* Mobile navigation.
+
+Semua halaman harus menggunakan design system yang sama.
+
+---
+
+# 57. PHASE 4 — DATABASE
+
+Buat database berdasarkan dokumentasi.
+
+Urutan:
+
+1. admins
+2. registrations
+3. payment_methods
+4. participants
+5. payment_proofs
+6. registration_cards
+7. audit_logs
+
+Buat migration/schema.
+
+Pastikan foreign key dan index sesuai kebutuhan.
+
+---
+
+# 58. PHASE 5 — ADMIN AUTHENTICATION
+
+Buat:
+
+* Login.
+* Logout.
+* Session.
+* Protected route.
+
+Test:
+
+\`\`\`text
+User belum login
+→ tidak dapat membuka dashboard.
+\`\`\`
+
+---
+
+# 59. PHASE 6 — ADMIN REGISTRATION
+
+Buat:
+
+* Dashboard.
+* Buat registrasi.
+* Edit registrasi jika diperlukan.
+* Publish.
+* Close.
+* Generate link.
+
+Pastikan link dapat dibuka tanpa login.
+
+---
+
+# 60. PHASE 7 — PESERTA
+
+Implementasikan berurutan:
+
+### Step 1
+
+Informasi registrasi.
+
+### Step 2
+
+Data diri.
+
+### Step 3
+
+Pembayaran.
+
+### Step 4
+
+Upload bukti.
+
+### Step 5
+
+Status.
+
+### Step 6
+
+Kartu pendaftaran.
+
+Jangan membuat semua step dalam satu halaman panjang.
+
+---
+
+# 61. PHASE 8 — PAYMENT VERIFICATION
+
+Buat:
+
+* Daftar pembayaran.
+* Detail pembayaran.
+* Preview bukti.
+* Setujui.
+* Tolak.
+* Minta upload ulang.
+
+Pastikan perubahan status tercatat.
+
+---
+
+# 62. PHASE 9 — REGISTRATION CARD
+
+Implementasikan:
+
+* Generate nomor peserta.
+* Generate QR token.
+* Render kartu.
+* Download.
+* Print.
+
+Kartu hanya tersedia setelah pembayaran disetujui.
+
+---
+
+# 63. PHASE 10 — VALIDATION & SECURITY
+
+Test:
+
+* Authentication.
+* Authorization.
+* File upload.
+* File size.
+* File type.
+* Input validation.
+* Duplicate registration.
+* Access token.
+* SQL injection protection.
+* XSS protection.
+* CSRF protection jika relevan.
+* Unauthorized access.
+
+---
+
+# 64. PHASE 11 — RESPONSIVE TESTING
+
+Test seluruh halaman pada:
+
+\`\`\`text
+Mobile
+Tablet
+Laptop
+Desktop
+\`\`\`
+
+Perbaiki semua:
+
+* Overflow.
+* Text collision.
+* Button collision.
+* Table overflow.
+* Modal overflow.
+* Navigation issue.
+
+---
+
+# 65. PHASE 12 — USER TESTING
+
+Simulasikan peserta baru:
+
+\`\`\`text
+Buka link
+↓
+Daftar
+↓
+Isi data
+↓
+Bayar
+↓
+Upload bukti
+↓
+Kirim
+↓
+Menunggu verifikasi
+↓
+Admin menyetujui
+↓
+Peserta melihat kartu
+\`\`\`
+
+Simulasikan Admin:
+
+\`\`\`text
+Login
+↓
+Buat acara
+↓
+Publish
+↓
+Copy link
+↓
+Melihat peserta
+↓
+Periksa bukti
+↓
+Setujui
+↓
+Lihat kartu
+\`\`\`
+
+Semua alur harus berhasil tanpa error.
+
+---
+
+# 66. TEST CASE UTAMA
+
+## Peserta
+
+### Test 1
+
+Buka link registrasi.
+
+Expected:
+
+Informasi acara muncul.
+
+### Test 2
+
+Klik Daftar Sekarang.
+
+Expected:
+
+Masuk ke form data diri.
+
+### Test 3
+
+Submit form kosong.
+
+Expected:
+
+Muncul validasi.
+
+### Test 4
+
+Isi data valid.
+
+Expected:
+
+Masuk pembayaran.
+
+### Test 5
+
+Upload file lebih dari 5 MB.
+
+Expected:
+
+Upload ditolak.
+
+### Test 6
+
+Upload format tidak didukung.
+
+Expected:
+
+Upload ditolak.
+
+### Test 7
+
+Upload bukti valid.
+
+Expected:
+
+File muncul.
+
+### Test 8
+
+Kirim pendaftaran.
+
+Expected:
+
+Status menjadi Menunggu Verifikasi.
+
+---
+
+# 67. TEST ADMIN
+
+### Test 1
+
+Buka dashboard tanpa login.
+
+Expected:
+
+Redirect ke login.
+
+### Test 2
+
+Login valid.
+
+Expected:
+
+Masuk dashboard.
+
+### Test 3
+
+Login invalid.
+
+Expected:
+
+Pesan error.
+
+### Test 4
+
+Buat registrasi.
+
+Expected:
+
+Registrasi berhasil dibuat.
+
+### Test 5
+
+Copy link.
+
+Expected:
+
+Link tercopy.
+
+### Test 6
+
+Lihat peserta.
+
+Expected:
+
+Detail peserta tampil.
+
+### Test 7
+
+Setujui pembayaran.
+
+Expected:
+
+Status berubah menjadi Disetujui.
+
+### Test 8
+
+Peserta membuka status.
+
+Expected:
+
+Kartu dapat dibuka.
+
+---
+
+# 68. ACCEPTANCE CRITERIA
+
+Aplikasi dianggap selesai apabila:
+
+## Peserta
+
+* [ ] Bisa membuka link registrasi.
+* [ ] Bisa melihat informasi acara.
+* [ ] Bisa mengisi data.
+* [ ] Bisa melakukan pembayaran secara manual.
+* [ ] Bisa upload bukti.
+* [ ] Bisa melihat status.
+* [ ] Bisa melihat kartu setelah disetujui.
+* [ ] Bisa download kartu.
+* [ ] Bisa print kartu.
+
+## Admin
+
+* [ ] Bisa login.
+* [ ] Bisa melihat dashboard.
+* [ ] Bisa membuat registrasi.
+* [ ] Bisa mendapatkan link.
+* [ ] Bisa melihat peserta.
+* [ ] Bisa melihat bukti pembayaran.
+* [ ] Bisa menyetujui pembayaran.
+* [ ] Bisa menolak pembayaran.
+* [ ] Bisa meminta upload ulang.
+* [ ] Bisa melihat kartu peserta.
+
+## Sistem
+
+* [ ] Database berjalan.
+* [ ] Authentication berjalan.
+* [ ] Authorization berjalan.
+* [ ] File upload aman.
+* [ ] Validasi berjalan.
+* [ ] Responsive.
+* [ ] Tidak ada horizontal scroll.
+* [ ] Tidak ada error utama.
+* [ ] Production build berhasil.
+
+---
+
+# 69. HAL YANG TIDAK PERLU DIBUAT
+
+Untuk versi pertama, JANGAN membuat:
+
+* Chat.
+* Forum.
+* Dashboard peserta yang kompleks.
+* Sistem membership.
+* Sistem poin.
+* Sistem kupon.
+* Sistem referral.
+* Payment gateway otomatis.
+* Live chat.
+* Analytics kompleks.
+* Grafik kompleks.
+* Multi-level admin.
+* Role yang terlalu banyak.
+* Notifikasi yang terlalu banyak.
+* CMS kompleks.
+* Fitur sosial media.
+* Fitur yang tidak berhubungan dengan registrasi.
+
+Fokus hanya pada:
+
+**REGISTRASI → PEMBAYARAN → VERIFIKASI → KARTU**
+
+---
+
+# 70. FITUR YANG BOLEH DIKEMBANGKAN NANTI
+
+Fitur berikut bukan bagian dari versi pertama:
+
+* WhatsApp notification.
+* Email notification.
+* Payment gateway.
+* Check-in menggunakan QR.
+* Export Excel yang lebih lengkap.
+* Multiple admin.
+* Multiple event management yang lebih kompleks.
+* Dashboard analytics.
+* Attendance.
+* Sertifikat otomatis.
+
+Jangan implementasikan fitur tersebut pada MVP kecuali diperintahkan secara khusus.
+
+---
+
+# 71. PRIORITAS FITUR
+
+Gunakan prioritas berikut:
+
+### P0 — WAJIB
+
+* Admin Login
+* Buat Registrasi
+* Link Registrasi
+* Form Peserta
+* Pembayaran
+* Upload Bukti
+* Verifikasi Admin
+* Status
+* Kartu Pendaftaran
+* Database
+* Responsive
+
+### P1 — PENTING
+
+* Search Peserta
+* Filter Status
+* Download Kartu
+* Print Kartu
+* Export Excel
+
+### P2 — NANTI
+
+* WhatsApp
+* Email
+* QR Check-in
+* Payment Gateway
+* Analytics
+
+---
+
+# 72. ATURAN UNTUK AI AGENT ANTIGRAVITY
+
+AI Agent wajib mengikuti aturan berikut:
+
+### RULE 1
+
+**Baca dokumentasi sebelum melakukan perubahan.**
+
+---
+
+### RULE 2
+
+Jangan mengubah alur utama tanpa alasan yang jelas.
+
+---
+
+### RULE 3
+
+Jangan menambahkan fitur yang tidak diperlukan.
+
+---
+
+### RULE 4
+
+Jika menemukan masalah arsitektur, perbaiki dengan solusi paling sederhana.
+
+---
+
+### RULE 5
+
+Jangan mengorbankan UX demi kompleksitas teknis.
+
+---
+
+### RULE 6
+
+Jangan membuat UI berdasarkan asumsi teknis.
+
+UI harus mengikuti kebutuhan pengguna.
+
+---
+
+### RULE 7
+
+Setiap perubahan database harus dibuat melalui migration/schema yang jelas.
+
+---
+
+### RULE 8
+
+Jangan hardcode data penting seperti:
+
+* Password.
+* API key.
+* Database credentials.
+* Secret token.
+
+---
+
+### RULE 9
+
+Setiap fitur harus diuji setelah dibuat.
+
+---
+
+### RULE 10
+
+Sebelum menyatakan aplikasi selesai, lakukan full user-flow testing.
+
+---
+
+# 73. ATURAN SAAT MENEMUKAN ERROR
+
+Jika menemukan error:
+
+1. Identifikasi penyebab.
+2. Jangan langsung melakukan workaround.
+3. Periksa apakah masalah berasal dari:
+
+   * Frontend.
+   * Backend.
+   * Database.
+   * Authentication.
+   * Storage.
+   * Validation.
+4. Perbaiki akar masalah.
+5. Jalankan kembali test.
+6. Pastikan perbaikan tidak merusak fitur lain.
+
+---
+
+# 74. ATURAN PERUBAHAN FITUR
+
+Jika ada permintaan fitur baru:
+
+AI Agent harus mengevaluasi:
+
+\`\`\`text
+Apakah fitur ini diperlukan?
+        ↓
+Ya → Tambahkan
+        ↓
+Tidak
+        ↓
+Jelaskan bahwa fitur tidak diperlukan
+untuk versi saat ini.
+\`\`\`
+
+Jika fitur baru benar-benar dibutuhkan, update dokumentasi sebelum implementasi besar dilakukan.
+
+---
+
+# 75. DEFINITION OF DONE
+
+Aplikasi baru boleh dianggap **SELESAI** jika:
+
+\`\`\`text
+✓ Semua halaman selesai
+✓ Database selesai
+✓ Authentication selesai
+✓ Authorization selesai
+✓ API selesai
+✓ Form validation selesai
+✓ Upload file selesai
+✓ Payment verification selesai
+✓ Registration card selesai
+✓ Responsive selesai
+✓ Error handling selesai
+✓ Security dasar selesai
+✓ Test peserta selesai
+✓ Test admin selesai
+✓ Production build berhasil
+✓ Tidak ada error kritis
+\`\`\`
+
+---
+
+# 76. URUTAN PENGERJAAN FINAL
+
+AI Agent harus mengikuti urutan:
+
+\`\`\`text
+01. Baca Dokumentasi
+        ↓
+02. Analisis Project
+        ↓
+03. Setup Project
+        ↓
+04. Setup Design System
+        ↓
+05. Setup Database
+        ↓
+06. Setup Authentication
+        ↓
+07. Buat Admin Dashboard
+        ↓
+08. Buat Admin Registrasi
+        ↓
+09. Buat Halaman Peserta
+        ↓
+10. Buat Upload Bukti
+        ↓
+11. Buat Verifikasi Pembayaran
+        ↓
+12. Buat Kartu Pendaftaran
+        ↓
+13. Hubungkan Semua Alur
+        ↓
+14. Security
+        ↓
+15. Responsive
+        ↓
+16. Testing
+        ↓
+17. Bug Fix
+        ↓
+18. Production Build
+        ↓
+19. Final Verification
+        ↓
+20. SELESAI
+\`\`\`
+
+---
+
+# 77. CHECKPOINT SETIAP PHASE
+
+Setelah setiap phase selesai, AI Agent harus melakukan:
+
+\`\`\`text
+1. Check hasil pekerjaan.
+2. Jalankan aplikasi.
+3. Test fitur terkait.
+4. Periksa console error.
+5. Periksa TypeScript error.
+6. Periksa lint error.
+7. Periksa responsive.
+8. Pastikan tidak merusak fitur sebelumnya.
+\`\`\`
+
+Jangan melanjutkan ke phase berikutnya jika phase sebelumnya masih memiliki error kritis.
+
+---
+
+# 78. FINAL PROJECT STRUCTURE
+
+Struktur project harus tetap sederhana dan mudah dipahami.
+
+Contoh:
+
+\`\`\`text
+app/
+├── admin/
+│   ├── login/
+│   ├── dashboard/
+│   ├── registrasi/
+│   ├── peserta/
+│   ├── pembayaran/
+│   ├── kartu/
+│   └── pengaturan/
+│
+├── daftar/
+│   └── [slug]/
+│
+├── api/
+│
+components/
+├── ui/
+├── admin/
+└── registration/
+
+lib/
+├── auth/
+├── db/
+├── storage/
+├── validation/
+└── utils/
+
+types/
+
+public/
+
+supabase/
+└── migrations/
+\`\`\`
+
+Struktur aktual dapat disesuaikan dengan framework dan teknologi yang digunakan, tetapi prinsipnya harus tetap:
+
+> **Terstruktur, sederhana, mudah dibaca, dan mudah dikembangkan.**
+
+---
+
+# 79. HASIL AKHIR YANG DIHARAPKAN
+
+Aplikasi harus terasa seperti aplikasi registrasi profesional yang:
+
+* Sederhana.
+* Cepat dipahami.
+* Tidak membingungkan.
+* Cocok untuk pengguna Indonesia.
+* Nyaman digunakan melalui HP.
+* Nyaman digunakan Admin melalui laptop.
+* Tidak memiliki fitur berlebihan.
+* Memiliki alur yang jelas.
+
+Pengalaman peserta yang diharapkan:
+
+\`\`\`text
+Buka Link
+   ↓
+"Oh, ini pendaftarannya."
+   ↓
+Daftar Sekarang
+   ↓
+Isi Data
+   ↓
+Bayar
+   ↓
+Upload Bukti
+   ↓
+Selesai
+\`\`\`
+
+Pengalaman Admin:
+
+\`\`\`text
+Login
+   ↓
+"Lihat siapa yang sudah mendaftar."
+   ↓
+Periksa pembayaran
+   ↓
+Setujui
+   ↓
+Selesai
+\`\`\`
+
+---
+
+# 80. KALIMAT PEGANGAN PROJECT
+
+Seluruh pengembangan aplikasi harus mengikuti prinsip berikut:
+
+> **"Jangan membuat aplikasi yang terlihat canggih. Buat aplikasi yang mudah digunakan."**
+
+Dan alur utama harus selalu dijaga:
+
+> **DAFTAR → BAYAR → UPLOAD BUKTI → VERIFIKASI → KARTU**
+
+Jika sebuah desain, fitur, atau keputusan teknis tidak membantu alur tersebut, maka jangan dibuat kecuali memang diperlukan oleh sistem.
+
+**Dokumen ini menjadi acuan utama selama pengembangan aplikasi versi 1.0.**`,
       },
       { title: "Isi docs: pengguna, alur, teknologi, aturan aplikasi" },
       { title: "Desain tabel: users, trainings, registrations, payments" },

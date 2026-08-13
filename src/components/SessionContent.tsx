@@ -43,7 +43,13 @@ export default function SessionContent({ session }: { session: Session }) {
                 {step.prompts?.map((p) => (
                   <CopyPromptButton key={p.label} prompt={p.text} label={p.label} />
                 ))}
-                {step.exampleResult && <PromptResultBlock text={step.exampleResult} />}
+                {step.exampleResult && (
+                  <PromptResultBlock
+                    text={step.exampleResult}
+                    label={step.exampleResultLabel}
+                    subtitle={step.exampleResultSubtitle}
+                  />
+                )}
               </div>
             </div>
           </li>
