@@ -3459,19 +3459,38 @@ Jika sebuah desain, fitur, atau keputusan teknis tidak membantu alur tersebut, m
 
 **Dokumen ini menjadi acuan utama selama pengembangan aplikasi versi 1.0.**`,
       },
-      { title: "Isi docs: pengguna, alur, teknologi, aturan aplikasi" },
-      { title: "Desain tabel: users, trainings, registrations, payments" },
-      { title: "Setup Supabase PostgreSQL" },
-      { title: "Setup Supabase Storage" },
-      { title: "Simpan sebagai Docs/application.md" },
+      {
+        title: "Siapkan Folder Project & Buka di AntiGravity IDE",
+        description: "Buat folder project Registrasi, lalu buka AntiGravity IDE.",
+      },
+      {
+        title: "Buat Dokumentasi Project",
+        description:
+          "Open Folder → Folder Registrasi → buat folder docs → buat file documentation.md → paste Dokumentasi dari ChatGPT.",
+      },
+      {
+        title: "Hubungkan Google AI Studio ke GitHub",
+        description: "Konek akun Google AI Studio ke GitHub.",
+      },
+      {
+        title: "Ambil Repo & Token GitHub",
+        description: "Buka repo di GitHub → copy repo → buat token akses.",
+      },
+      {
+        title: "Pull Repo & Jalankan di Lokal",
+        description:
+          "Di Prompt AntiGravity: \"Pull repo … dengan token …\" → source code berhasil didownload → jalankan aplikasi di komputer lokal.",
+      },
     ],
-    practice: "Membuat Supabase project dan dokumentasi aplikasi.",
+    practice: "Menyiapkan project di AntiGravity IDE dan menjalankan hasil pull repo secara lokal.",
     tools: [
       { name: "ChatGPT", url: "https://chat.openai.com" },
-      { name: "Supabase", url: "https://supabase.com" },
+      { name: "AntiGravity", url: "#" },
+      { name: "Google AI Studio", url: "https://aistudio.google.com" },
+      { name: "GitHub", url: "https://github.com" },
     ],
-    output: "Docs/application.md + database + storage siap",
-    teacherNote: "Bukti bayar disimpan di Storage; DB menyimpan URL/path.",
+    output: "Folder project + documentation.md + source code berjalan di lokal",
+    teacherNote: "Pastikan token GitHub disimpan aman dan tidak dibagikan di chat publik.",
   },
   {
     slug: "ai-coding-agent-project-setup",
