@@ -6,6 +6,7 @@ import InfoBlock from "./InfoBlock";
 import ImagePreview from "./ImagePreview";
 import VideoEmbed from "./VideoEmbed";
 import ChatGptSessionLink from "./ChatGptSessionLink";
+import PromptResultBlock from "./PromptResultBlock";
 
 export default function SessionContent({ session }: { session: Session }) {
   return (
@@ -42,6 +43,7 @@ export default function SessionContent({ session }: { session: Session }) {
                 {step.prompts?.map((p) => (
                   <CopyPromptButton key={p.label} prompt={p.text} label={p.label} />
                 ))}
+                {step.exampleResult && <PromptResultBlock text={step.exampleResult} />}
               </div>
             </div>
           </li>
