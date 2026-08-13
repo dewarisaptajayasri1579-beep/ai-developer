@@ -1,6 +1,7 @@
 export type Step = {
   title: string;
   description?: string;
+  image?: string;
   prompt?: string;
   prompts?: { label: string; text: string }[];
 };
@@ -52,6 +53,7 @@ export const sessions: Session[] = [
       {
         title: "Gambar Idemu di Kertas",
         description: "Sketsa ide aplikasi secara sederhana di atas kertas sebelum masuk ke AI.",
+        image: "/sketch-alur-registrasi.jpeg",
       },
       {
         title: "Upload ke ChatGPT dan Isikan Prompt 1",

@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Session } from "@/data/sessions";
 import CopyPromptButton from "./CopyPromptButton";
 import ToolsLinks from "./ToolsLinks";
@@ -32,6 +33,22 @@ export default function SessionContent({ session }: { session: Session }) {
               <div className="min-w-0">
                 <div className="font-semibold text-foreground">{step.title}</div>
                 {step.description && <p className="mt-1 text-sm text-muted">{step.description}</p>}
+                {step.image && (
+                  <a
+                    href={step.image}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-3 block w-fit overflow-hidden rounded-lg border border-neon/20"
+                  >
+                    <Image
+                      src={step.image}
+                      alt={step.title}
+                      width={480}
+                      height={360}
+                      className="h-auto max-h-72 w-auto object-contain"
+                    />
+                  </a>
+                )}
                 {step.prompt && <CopyPromptButton prompt={step.prompt} />}
                 {step.prompts?.map((p) => (
                   <CopyPromptButton key={p.label} prompt={p.text} label={p.label} />
