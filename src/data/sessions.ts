@@ -147,7 +147,11 @@ export const sessions: Session[] = [
     title: "System Design, Database & Documentation",
     description: "Memahami frontend, backend, dan database, dan membuat dokumentasi sebagai acuan AI.",
     steps: [
-      { title: "Lanjut Buat Prompt ke ChatGPT untuk membuat Dokumentasi Aplikasi" },
+      {
+        title: "Lanjut Buat Prompt ke ChatGPT untuk membuat Dokumentasi Aplikasi",
+        prompt:
+          "Oks, Sekarang buatkan Dokumentasi Aplikasis, akan aku gunakan sebagai Dasar dan Panduan Pengerjaan, sehingga AI Agent di AntiGravity akan mengikuti Dokumentasi ini dari Awal Pengerjaan hingga Selesai Aplikasi",
+      },
       { title: "Isi docs: pengguna, alur, teknologi, aturan aplikasi" },
       { title: "Desain tabel: users, trainings, registrations, payments" },
       { title: "Setup Supabase PostgreSQL" },
