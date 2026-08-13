@@ -122,6 +122,7 @@ export const sessions: Session[] = [
     slug: "publish-app-google-ai-studio",
     number: 3,
     category: "Frontend",
+    video: "https://drive.google.com/file/d/1oISq_FnmNMTI3uvmvytmn5wzk02KWX5i/view?usp=sharing",
     shortTitle: "Publish App with Google AI Studio",
     title: "Publish App with Google AI Studio",
     description: "Mempublikasikan aplikasi dari Google AI Studio dan menguji hasilnya melalui link yang sudah live.",
