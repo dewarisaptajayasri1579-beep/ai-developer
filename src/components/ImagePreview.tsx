@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
 import Image from "next/image";
-import { X } from "lucide-react";
+import { Download, X } from "lucide-react";
 
 export default function ImagePreview({ src, alt }: { src: string; alt: string }) {
   const [open, setOpen] = useState(false);
@@ -44,13 +44,24 @@ export default function ImagePreview({ src, alt }: { src: string; alt: string })
             className="fixed inset-0 z-50 flex items-center justify-center bg-black/85 p-4"
             onClick={() => setOpen(false)}
           >
-            <button
-              onClick={() => setOpen(false)}
-              aria-label="Tutup preview"
-              className="absolute top-4 right-4 text-white/80 hover:text-white transition-colors"
-            >
-              <X size={28} />
-            </button>
+            <div className="absolute top-4 right-4 flex items-center gap-4">
+              <a
+                href={src}
+                download
+                onClick={(e) => e.stopPropagation()}
+                aria-label="Download gambar"
+                className="text-white/80 hover:text-white transition-colors"
+              >
+                <Download size={26} />
+              </a>
+              <button
+                onClick={() => setOpen(false)}
+                aria-label="Tutup preview"
+                className="text-white/80 hover:text-white transition-colors"
+              >
+                <X size={28} />
+              </button>
+            </div>
             <Image
               src={src}
               alt={alt}
