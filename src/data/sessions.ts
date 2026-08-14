@@ -3460,37 +3460,46 @@ Jika sebuah desain, fitur, atau keputusan teknis tidak membantu alur tersebut, m
 **Dokumen ini menjadi acuan utama selama pengembangan aplikasi versi 1.0.**`,
       },
       {
-        title: "Siapkan Folder Project & Buka di AntiGravity IDE",
-        description: "Buat folder project Registrasi, lalu buka AntiGravity IDE.",
+        title: "Buat Folder Project",
+        description: "Contoh: D:\\project\\registrasi",
       },
       {
-        title: "Buat Dokumentasi Project",
-        description:
-          "Open Folder → Folder Registrasi → buat folder docs → buat file documentation.md → paste Dokumentasi dari ChatGPT.",
+        title: "Buka AntiGravity",
+        description: "Open Folder → pilih folder Registrasi.",
       },
       {
-        title: "Hubungkan Google AI Studio ke GitHub",
-        description: "Konek akun Google AI Studio ke GitHub.",
+        title: "Buat Folder Docs",
+        description: "Buat file documentation.md → isikan Dokumentasi dari ChatGPT.",
       },
       {
-        title: "Ambil Repo & Token GitHub",
-        description: "Buka repo di GitHub → copy repo → buat token akses.",
+        title: "Google AI Studio",
+        description: "Konek ke Repo GIT.",
       },
       {
-        title: "Pull Repo & Jalankan di Lokal",
-        description:
-          "Di Prompt AntiGravity: \"Pull repo … dengan token …\" → source code berhasil didownload → jalankan aplikasi di komputer lokal.",
+        title: "Git",
+        description: "Copy Repository, buat Token.",
+      },
+      {
+        title: "Simpan di Folder Docs/secret.txt",
+      },
+      {
+        title: "Prompt ke AntiGravity",
+        description: "Jalankan Aplikasi di Komputer di port 3500.",
+      },
+      {
+        title: "Buka Browser",
+        description: "Ketik localhost:3500",
       },
     ],
-    practice: "Menyiapkan project di AntiGravity IDE dan menjalankan hasil pull repo secara lokal.",
+    practice: "Menyiapkan project di AntiGravity IDE dan menjalankan aplikasi hasil pull repo secara lokal.",
     tools: [
       { name: "ChatGPT", url: "https://chat.openai.com" },
       { name: "AntiGravity", url: "#" },
       { name: "Google AI Studio", url: "https://aistudio.google.com" },
       { name: "GitHub", url: "https://github.com" },
     ],
-    output: "Folder project + documentation.md + source code berjalan di lokal",
-    teacherNote: "Pastikan token GitHub disimpan aman dan tidak dibagikan di chat publik.",
+    output: "Folder project + documentation.md + secret.txt + aplikasi berjalan di localhost:3500",
+    teacherNote: "Pastikan token GitHub disimpan di Docs/secret.txt dan tidak dibagikan di chat publik.",
   },
   {
     slug: "ai-coding-agent-project-setup",
