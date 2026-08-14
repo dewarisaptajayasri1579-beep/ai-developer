@@ -38,6 +38,18 @@ export default function SessionContent({ session }: { session: Session }) {
               <div className="min-w-0">
                 <div className="font-semibold text-foreground">{step.title}</div>
                 {step.description && <p className="mt-1 text-sm text-muted">{step.description}</p>}
+                {step.substeps && step.substeps.length > 0 && (
+                  <ol className="mt-2 space-y-1">
+                    {step.substeps.map((sub, j) => (
+                      <li key={sub} className="flex items-start gap-2 text-sm text-muted">
+                        <span className="mt-0.5 text-xs font-semibold text-neon-bright shrink-0">
+                          {j + 1}.
+                        </span>
+                        {sub}
+                      </li>
+                    ))}
+                  </ol>
+                )}
                 {step.image && <ImagePreview src={step.image} alt={step.title} />}
                 {step.prompt && <CopyPromptButton prompt={step.prompt} />}
                 {step.prompts?.map((p) => (

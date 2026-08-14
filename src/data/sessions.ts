@@ -4,6 +4,7 @@ export type Step = {
   image?: string;
   prompt?: string;
   prompts?: { label: string; text: string }[];
+  substeps?: string[];
   exampleResult?: string;
   exampleResultLabel?: string;
   exampleResultSubtitle?: string;
@@ -3502,30 +3503,50 @@ Jika sebuah desain, fitur, atau keputusan teknis tidak membantu alur tersebut, m
     teacherNote: "Pastikan token GitHub disimpan di Docs/secret.txt dan tidak dibagikan di chat publik.",
   },
   {
-    slug: "ai-coding-agent-project-setup",
+    slug: "supabase-build-backend",
     number: 5,
     category: "Backend",
-    shortTitle: "AI Coding Agent & Project Setup",
-    title: "AI Coding Agent & Project Setup",
-    description: "Menyiapkan project lokal dan membuat AI memahami requirement sebelum coding.",
+    shortTitle: "Supabase & Build Backend",
+    title: "Supabase & Build Backend",
+    description:
+      "Menyiapkan database & storage di Supabase, lalu membangun backend Admin dan Peserta menggunakan AI.",
     steps: [
-      { title: "Login Antigravity" },
-      { title: "Open/Create folder project" },
-      { title: "Pastikan folder Docs tersedia" },
-      { title: "Clone/pull repository GitHub" },
-      { title: "Jalankan aplikasi" },
-      { title: "Cek localhost di browser" },
-      { title: "Minta AI baca folder Docs" },
-      { title: "Minta AI jelaskan requirement" },
-      { title: "Minta AI buat timeline implementasi" },
+      {
+        title: "Buat Database di Supabase",
+        description: "Simpan URL Setting Supabase.",
+      },
+      {
+        title: "Buat Penyimpanan di Supabase Storage",
+        description: "Simpan URL Setting-nya.",
+      },
+      {
+        title: "AntiGravity diminta cek Aplikasi",
+        description: "Cek aplikasi dengan Struktur Tabelnya di Documentation.md.",
+      },
+      {
+        title: "Pembuatan Backend Admin",
+        substeps: [
+          "Buat Halaman Login",
+          "Buat Menu Registrasi",
+          "Buat Menu Daftar Peserta",
+          "Buat Menu Pembayaran",
+          "Buat Menu Kartu Pendaftaran",
+          "Buat Menu Pengaturan",
+          "TESTING",
+        ],
+      },
+      {
+        title: "Pembuatan Backend Peserta",
+        substeps: ["Buat Form Registrasi", "TESTING"],
+      },
     ],
-    practice: "Menjalankan frontend dari GitHub dan menyiapkan rencana backend.",
+    practice: "Membangun backend Admin dan Peserta di atas database Supabase yang sudah disiapkan.",
     tools: [
-      { name: "Antigravity", url: "#" },
-      { name: "GitHub", url: "https://github.com" },
+      { name: "Supabase", url: "https://supabase.com" },
+      { name: "AntiGravity", url: "#" },
     ],
-    output: "Project lokal berjalan + AI memahami Docs + timeline pekerjaan",
-    teacherNote: "Jangan langsung coding semua fitur sekaligus.",
+    output: "Database & Storage Supabase aktif + Backend Admin dan Peserta berjalan dan teruji",
+    teacherNote: "Gunakan pola 1 Menu → Test → Menu berikutnya agar mudah melacak bug.",
   },
   {
     slug: "build-backend-with-ai",
