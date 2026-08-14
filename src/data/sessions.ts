@@ -1058,6 +1058,7 @@ Hasil akhir harus terlihat seperti aplikasi produksi yang siap dikembangkan lebi
     slug: "system-design-database-docs",
     number: 4,
     category: "Backend",
+    video: "https://drive.google.com/file/d/1QMQfmDH7GkYkzxhCgJ5F6Z7r2juHh6jM/view?usp=sharing",
     shortTitle: "System Design, Database & Documentation",
     title: "System Design, Database & Documentation",
     description: "Memahami frontend, backend, dan database, dan membuat dokumentasi sebagai acuan AI.",
